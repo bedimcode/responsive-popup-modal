@@ -1,0 +1,112 @@
+/*=============== MODAL ===============*/
+.container{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.modal{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    
+    &__button{
+        display: inline-block;
+        background-color: var(--first-color);
+        color: #FFF;
+        padding: 1rem 1.25rem;
+        border-radius: .5rem;
+        transition: .3s;
+        
+        &:hover{
+            background-color: var(--first-color-alt);
+        }
+        
+    }
+    &__container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: hsla(var(--hue), 18%, 75%, .8);
+        width: 100%;
+        height: 100%;
+        display: grid;
+        align-items: flex-end;
+        overflow: hidden;
+        transition: all .3s;
+        z-index: var(--z-modal);
+        visibility: hidden;
+        opacity: 0;
+
+        /* === Effect 3 === */
+        /* perspective: 1000px; */
+    }
+    &__content{
+        position: relative;
+        background-color: var(--container-color);
+        text-align: center;
+        padding: 3rem 2rem 2rem;
+        border-radius: 1rem 1rem 0 0;
+        transition: all .3s;
+
+        /* === Effect 1 === */
+        transform: translateY(10%);
+
+        /* === Effect 2 === */
+        /* transform: scale(.5) translateY(10%); */
+
+        /* === Effect 3 === */
+        /* transform-origin: 50% 100%; */
+        /* transform: rotateX(65deg) scale(.75) translateY(10%); */
+
+    }
+    &__img{
+        width: 150px;
+        margin-bottom: .75rem;
+    }
+    &__close{
+        display: inline-flex;
+        background-color: var(--first-color);
+        border-radius: .25rem;
+        color: #FFF;
+        font-size: 1.5rem;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        cursor: pointer;
+    }
+    &__title{
+        font-size: var(--big-font-size);
+        color: var(--title-color);
+        font-weight: 500;
+    }
+    &__description{
+        margin-bottom: 1.5rem;
+    }
+    &__button-width{
+        width: 90%;
+    }
+    &__button-link{
+        display: block;
+        margin: 1rem auto 0;
+        background-color: transparent;
+        color: var(--first-color);
+        font-weight: 500;
+    }
+}
+
+/* Show modal */
+.show-modal{
+    visibility: visible;
+    opacity: 1;
+}
+
+.show-modal .modal__content{
+    /* === Effect 1 === */
+    transform: translateY(0);
+
+    /* === Effect 2 === */
+    /* transform: scale(1) translateY(0); */
+
+    /* === Effect 3 === */
+    /* transform: rotateX(0) scale(1) translateY(0); */
+}
